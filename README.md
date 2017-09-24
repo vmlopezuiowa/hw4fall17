@@ -6,13 +6,8 @@
 0. Then do `cd rotten-potatoes` to change to the app's
 top-level directory.
 
-0. Next type  `gem install bundler` to  install the bundler gem
-
-
-0. Enter the command `bundle install --without production` to make sure all the gems
+0. Enter the command `bundle install` to make sure all the gems
 (libraries) used by the app are in place.
-
-0. Run `rake db:create` to create the initial database.
 
 0. Run `rake db:migrate` to apply the database migrations.
 
