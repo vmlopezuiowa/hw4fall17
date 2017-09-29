@@ -15,7 +15,7 @@ class MoviesController < ApplicationController
   end
 
   def new
-    render app/views/users/new.html.haml
+    # default: render 'new' template
   end
 
   def create
