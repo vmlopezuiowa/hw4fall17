@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     end
     
     def new
-        redirect_to users_path
+        @user = user.new
     end
     def create
         @user = User.create!(user_params)
