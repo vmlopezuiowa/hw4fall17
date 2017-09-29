@@ -7,8 +7,8 @@
     = csrf_meta_tags
 
   %body
-    = button_to 'Sign up/Login', new_user_path(@user)
     %h1.title Rotten Potatoes!
+    = button_to 'Sign up/Login', new_user_path(@user)
     #main
       - if flash[:notice]
         #notice.message= flash[:notice]
