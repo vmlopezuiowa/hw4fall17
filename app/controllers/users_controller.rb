@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     end
     
     def new
-        # default: render 'new' template
+        render 'new'
     end
     def create
         @user = User.create!(user_params)
