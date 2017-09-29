@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     end
     
     def new
-        render :action => "new"
+        redirect_to users_path
     end
     def create
         @user = User.create!(user_params)
