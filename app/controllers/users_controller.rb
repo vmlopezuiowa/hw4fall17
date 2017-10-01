@@ -25,11 +25,11 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.create!(user_params)
-    if @user.save
+    if @user.save?
       flash[:notice] = "#{@user.user_id} was successfully created."
       redirect_to movies_path
     else
-      flash[:notice] = "Sorry, this user-id is taken. Try again."
+      flash[:error] = "Sorry, this user-id is taken. Try again."
       redirect_to new
     end
   end
