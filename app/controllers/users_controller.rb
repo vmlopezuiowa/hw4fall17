@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create!(user_params)
     flash[:notice] = "#{@user.user_id} was successfully created."
-    render :controller => "movie" , :action => "index"
+    redirect_to :controller => "movie" , :action => "index"
   end
 
   # PATCH/PUT /users/1
