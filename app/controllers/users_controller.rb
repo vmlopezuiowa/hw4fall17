@@ -23,11 +23,12 @@ class UsersController < ApplicationController
 
 
   def create
-    if params[:user_id].unique?
-      @user = User.create(user_params)
+    @user = User.create!(user_params)
+    if @user.save
+      flash[:notice] = "Welcome #{@user.user_id}. Your account has been created"
       redirect_to movies_path
     else
-      flash[:error] = 'fdsa'
+      flash[:error] = "Sorry, this user-id is taken. Try again."
       redirect_to new
     end
   end
