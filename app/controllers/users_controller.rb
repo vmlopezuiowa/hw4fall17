@@ -24,8 +24,10 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.create!(user_params)
-    if @user.save?
+    if!User.exists?(user_params)
+      @user = User.create!(user_params)
+    end
+    if @user.save
       flash[:notice] = "Welcome #{@user.user_id}. Your account has been created"
       redirect_to movies_path
     else
