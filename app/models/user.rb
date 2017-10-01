@@ -1,3 +1,3 @@
 class User < ActiveRecord::Base
-    validates_uniqueness_of :user_id
+    validates :user_id , uniqueness: true
 end
