@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    redirect_to new
+    redirect_to movies_path
   end
 
   # GET /users/1
@@ -21,8 +21,7 @@ class UsersController < ApplicationController
   def edit
   end
 
-  # POST /users
-  # POST /users.json
+
   def create
     @user = User.create!(user_params)
     if @user.save
