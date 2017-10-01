@@ -23,22 +23,14 @@ class UsersController < ApplicationController
 
 
   def create
-    @user = User.new(user_params)
-    respond_to do |format|
-      if @user.save
-        redirect_to movies_path
-      else
-        redirect to new
-      end
-    #@user = User.create!(user_params)
-    #if @user.save
-     # flash[:notice] = "Welcome #{@user.user_id}. Your account has been created"
-      #redirect_to movies_path
-    #else
-     # render action: "new"
-      #flash[:error] = "Sorry, this user-id is taken. Try again."
-      #redirect_to new
-    #end
+    @user = User.create!(user_params)
+    if @user.save
+      flash[:notice] = "Welcome #{@user.user_id}. Your account has been created"
+      redirect_to movies_path
+    else
+      flash[:error] = "Sorry, this user-id is taken. Try again."
+      redirect_to new
+    end
   end
 
   # PATCH/PUT /users/1
