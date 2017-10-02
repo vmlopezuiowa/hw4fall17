@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    render 'new'
+    redirect_to new
   end
 
   # GET /users/1/edit
