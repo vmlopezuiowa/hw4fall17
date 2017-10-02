@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
 
   # GET /sessions/new
   def new
-    render new
+    
   end
   
   # POST /sessions
