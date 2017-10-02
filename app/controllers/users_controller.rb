@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    render 'new'
+    
   end
 
   # GET /users/1/edit
@@ -30,7 +30,6 @@ class UsersController < ApplicationController
     else
       flash[:error] = "Sorry, this user-id is taken. Try again."
       redirect_to new and return
-      return
     end
   end
 
