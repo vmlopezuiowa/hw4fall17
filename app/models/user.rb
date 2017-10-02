@@ -3,6 +3,6 @@ class User < ActiveRecord::Base
         
     def self.create_user(user_params)
         session_token = SecureRandom.base64
-        ActiveRecord.create(user_params,session_token)
+        self.create(user_params,session_token)
     end
 end
