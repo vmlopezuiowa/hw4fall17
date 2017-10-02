@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   # GET /sessions
   # GET /sessions.json
   def index
-    @sessions = Session.all
+    render :login_path
   end
 
   # GET /sessions/1
@@ -14,7 +14,6 @@ class SessionsController < ApplicationController
 
   # GET /sessions/new
   def new
-    render :login
   end
 
   # GET /sessions/1/edit
