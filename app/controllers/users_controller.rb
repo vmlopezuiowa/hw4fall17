@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    redirect_to new
+    render 'new'
   end
 
   # GET /users/1/edit
@@ -23,13 +23,14 @@ class UsersController < ApplicationController
 
 
   def create
-    @user = User.create(user_params)
+    @user = User.create!(user_params)
     if @user.save
       flash[:notice] = "Welcome #{@user.user_id}. Your account has been created"
       redirect_to movies_path
     else
       flash[:error] = "Sorry, this user-id is taken. Try again."
       redirect_to new
+      return
     end
   end
 
