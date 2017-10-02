@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
 
   # GET /sessions/new
   def new
+    render login
   end
 
   # GET /sessions/1/edit
