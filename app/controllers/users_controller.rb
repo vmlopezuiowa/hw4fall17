@@ -29,7 +29,7 @@ class UsersController < ApplicationController
       redirect_to movies_path
     else
       flash[:error] = "Sorry, this user-id is taken. Try again."
-      redirect_to new
+      redirect_to new and return
       return
     end
   end
