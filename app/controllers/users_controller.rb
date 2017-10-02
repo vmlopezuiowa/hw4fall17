@@ -28,8 +28,8 @@ class UsersController < ApplicationController
       flash[:notice] = "Welcome #{@user.user_id}. Your account has been created"
       redirect_to movies_path
     else
-      flash[:error] = "Sorry, this user-id is taken. Try again."
       redirect_to new_user_path
+      flash[:error] = "Sorry, this user-id is taken. Try again."
     end
   end
 
