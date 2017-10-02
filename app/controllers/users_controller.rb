@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    redirect_to movies_path
+    render 'new'
   end
 
   # GET /users/1
