@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
 
   # GET /sessions/new
   def new
-    render 'login_path'
+
   end
 
   # GET /sessions/1/edit
@@ -28,11 +28,9 @@ class SessionsController < ApplicationController
 
     respond_to do |format|
       if @session.save
-        format.html { redirect_to @session, notice: 'Session was successfully created.' }
-        format.json { render :show, status: :created, location: @session }
+      redirect_to login_path
       else
-        format.html { render :new }
-        format.json { render json: @session.errors, status: :unprocessable_entity }
+      redirect_to movie_path
       end
     end
   end
